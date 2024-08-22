@@ -5,7 +5,7 @@
 
 /**
  * @task
- * Create a function that returns a promise with a constructor that follows the requirements:
+ *  Create a function that returns a promise with a constructor that follows the requirements:
  * * Has a name of 'getPromise'
  * * Takes a boolean as an argument
  * * Returns a promise constructor that creates a promise that:
@@ -15,9 +15,11 @@
  * Example: export const getPromise = (bool) = return <Your promise constructor code>
  */
 
-export const getPromise = () => {
-  // Your code goes here...
-};
+export const getPromise = (bool) => 
+    // Your code goes here...
+  new Promise((resolve, reject) => 
+    bool ? resolve('The PROMISE was RESOLVED') : reject('The PROMISE was REJECTED')
+  );
 
 /**
  * Create a handlePromise function that follows:
@@ -28,9 +30,9 @@ export const getPromise = () => {
  * The handlePromise() function must be exported
  */
 
-export const handlePromise = () => {
-  // Your code goes here...
-};
+export const handlePromise = (promise) => 
+      // Your code goes here...
+  promise.then(value => value, () => 'Uh Oh');
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-2"

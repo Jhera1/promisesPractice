@@ -63,7 +63,7 @@ export const handlePromise = (promise) => {
       return value;
     })
     .catch((reason) => {
-      if (reason && reason.message) {
+      if (reason.message) {
         return onReject(reason);
       } else {
         return reason;

@@ -6,25 +6,8 @@ export const getFirstResolvedPromise = (promises) => {
 
 export const getFirstPromiseOrFail = (promises) => {
   //*  write code to pass test ⬇
-  return new Promise((resolve, reject) => {
-    let hasResolved = false;
+  return Promise.race(promises);
 
-    promises.forEach(promise => {
-      promise
-        .then(result => {
-          if (!hasResolved) {
-            hasResolved = true;
-            resolve(result);
-          }
-        })
-        .catch(err => {
-          if (!hasResolved) {
-            hasResolved = true;
-            reject(err);
-          }
-        });
-    });
-  });
 };
 
 export const getQuantityOfRejectedPromises = (promises) => {
